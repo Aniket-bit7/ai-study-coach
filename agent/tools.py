@@ -47,3 +47,39 @@ def preprocess_input(data_dict):
 
     return df
 
+def predict_student(data_dict):
+
+    # Preprocess input
+    df = preprocess_input(data_dict)
+
+    # Scale features
+    df_scaled = scaler.transform(df)
+
+    # Classification
+    pred = classifier.predict(df_scaled)[0]
+    prob = classifier.predict_proba(df_scaled)[0][1]
+
+    # Clustering
+    cluster_input = df[[
+        "Average_Quiz_Score",
+        "Engagement_Index",
+        "Attendance"
+    ]]
+
+    cluster_scaled = cluster_scaler.transform(cluster_input)
+    cluster_id = cluster_model.predict(cluster_scaled)[0]
+
+    cluster_map = {
+        0: "At Risk",
+        1: "High Performer",
+        2: "Struggling but Engaged"
+    }
+
+    # Final output
+    result = {
+        "prediction": "Pass" if pred == 1 else "Fail",
+        "probability": float(prob),
+        "cluster": cluster_map.get(cluster_id, "Unknown")
+    }
+
+    return result
