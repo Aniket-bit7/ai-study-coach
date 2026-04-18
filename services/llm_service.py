@@ -4,7 +4,7 @@ from agent.config import GROQ_API_KEY
 
 def generate_response(prompt: str, api_key: str = None):
     """Generate LLM response using Groq. Accepts optional runtime API key."""
-    key = api_key
+    key = api_key or GROQ_API_KEY
 
     if not key:
         return "⚠️ No Groq API key provided. Please enter your API key in the sidebar."
