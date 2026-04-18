@@ -1,7 +1,11 @@
 import os
-from dotenv import load_dotenv
 
-load_dotenv()
+try:
+    import streamlit as st
+    SERPAPI_KEY = st.secrets.get("SERPAPI_KEY", "")
+except Exception:
+    SERPAPI_KEY = ""
 
-SERPAPI_KEY = os.getenv("SERPAPI_KEY", "")
-GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
+# 🔁 Fallback to environment variable (local)
+if not SERPAPI_KEY:
+    SERPAPI_KEY = os.getenv("SERPAPI_KEY", "")
