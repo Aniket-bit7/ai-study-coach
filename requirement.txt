@@ -1,0 +1,35 @@
+# Core Data Science
+numpy
+pandas
+scikit-learn==1.6.1
+joblib
+
+# Visualization
+matplotlib
+seaborn
+
+# Web App
+streamlit
+
+# AI Agent Framework
+langgraph
+langchain-core
+
+# LLM Provider
+groq
+
+# HTTP
+requests
+httpx
+
+# RAG / Vector DB
+chromadb
+sentence-transformers
+
+# Search & Environment
+google-search-results
+python-dotenv
+
+# Utilities
+tqdm
+typing_extensions
