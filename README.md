@@ -183,7 +183,6 @@ StudyAI/
 │   └── time_spent_bounds.joblib  # Outlier bounds for time_spent
 │
 ├── assets/
-│   ├── hero_preview.png          # README hero image
 │   └── architecture.png          # Architecture diagram
 │
 ├── .streamlit/
