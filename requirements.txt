@@ -1,0 +1,16 @@
+streamlit
+groq
+python-dotenv
+google-search-results
+chromadb
+sentence-transformers
+scikit-learn
+pandas
+numpy
+langgraph
+requests
+httpx
+
+# Utilities
+tqdm
+typing_extensions
