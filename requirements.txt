@@ -3,6 +3,7 @@ groq
 python-dotenv
 google-search-results
 chromadb
+protobuf==3.20.3
 sentence-transformers
 scikit-learn
 pandas
