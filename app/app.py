@@ -9,15 +9,11 @@ from services.llm_service import generate_response
 from agent.config import GROQ_API_KEY
 from agent.memory import add_to_memory
 
-
-
 @st.cache_resource
 def get_graph():
     return build_graph()
 
 graph = get_graph()
-
-
 
 st.set_page_config(
     page_title="StudyAI — Your AI Study Coach",
