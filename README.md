@@ -79,7 +79,7 @@ Intent → ML → Reasoning → Adaptive → Planner → RAG → Search → LLM 
 
 - Python 3.10 or higher
 - [Groq API Key](https://console.groq.com/keys) (free tier available)
-- [SerpAPI Key](https://serpapi.com/) (free tier: 100 searches/month)
+- [SerpAPI Key](https://serpapi.com/) (free tier: 250 searches/month)
 
 ### Installation
 
