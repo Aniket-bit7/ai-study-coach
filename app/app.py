@@ -9,11 +9,15 @@ from services.llm_service import generate_response
 from agent.config import GROQ_API_KEY
 from agent.memory import add_to_memory
 
+
+
 @st.cache_resource
 def get_graph():
     return build_graph()
 
 graph = get_graph()
+
+
 
 st.set_page_config(
     page_title="StudyAI — Your AI Study Coach",
@@ -73,9 +77,10 @@ st.markdown("""
     }
 
     /* Hide default streamlit stuff */
-    header[data-testid="stHeader"] { background: #04060c; }
+    header[data-testid="stHeader"] { display: none !important; }
     #MainMenu { visibility: hidden; }
     footer { visibility: hidden; }
+    .stMainBlockContainer, .block-container { padding-top: 0 !important; }
 
     /* ═══ FORCE WHITE TEXT EVERYWHERE ═══ */
     .stApp, .stApp * { color: #e6edf3; }
@@ -184,7 +189,7 @@ st.markdown("""
     /* Hero */
     .hero {
         text-align: center;
-        padding: 80px 20px 40px;
+        padding: 20px 20px 40px;
         position: relative;
         z-index: 1;
     }
