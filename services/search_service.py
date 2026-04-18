@@ -2,9 +2,10 @@ from serpapi import GoogleSearch
 from agent.config import SERPAPI_KEY
 
 
-def search_courses(subject, intent=None):
+def search_courses(weak_areas, difficulty, subject, intent=None):
     recommendations = []
 
+    # Query
     if intent == "resources":
         query = f"{subject} tutorial video"
     else:
@@ -21,6 +22,7 @@ def search_courses(subject, intent=None):
 
     print("🔍 RAW RESULTS:", results)
 
+    # 1. PRIORITY → VIDEOS (BEST PART)
     videos = results.get("inline_videos", [])
 
     for vid in videos[:5]:
@@ -31,6 +33,7 @@ def search_courses(subject, intent=None):
             "type": "video"
         })
 
+    # 2. FALLBACK → COURSES / WEBSITES
     if not recommendations:
         for result in results.get("organic_results", [])[:5]:
             recommendations.append({
